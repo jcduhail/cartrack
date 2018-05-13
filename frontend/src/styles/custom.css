@@ -1,0 +1,26 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+body{
+    color: #444444;
+}
+#Body{
+    min-height: 550px;
+}
+.primary{
+    background: #f2b632 !important;
+}
+.secondery{
+    background: #2A2C43 !important;
+    color:#ffffff !important;
+}
+.left{
+    float:left !important;
+}
+.comics{
+	width:100%;
+	float:left;
+	margin:5px;
+	padding: 5px;
+	border-bottom: 1px solid black;
+}
