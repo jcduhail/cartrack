@@ -1,0 +1,11 @@
+.users{
+	width:100%;
+	float:left;
+	margin:5px;
+	padding: 5px;
+	border-bottom: 1px solid black;
+}
+
+.searchbar{
+	width:50%;
+}

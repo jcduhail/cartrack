@@ -5,6 +5,7 @@ import Routes from './routes';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import MobileHeader from './components/MobileHeader/MobileHeader';
+import {NotificationContainer} from 'react-notifications'
 
 
 class App extends Component {
@@ -13,7 +14,7 @@ class App extends Component {
 constructor(){
 super();
 this.state={
-appName: "Klaud9 test",
+appName: "Cartrack test",
 home: false
 }
 }
@@ -31,6 +32,7 @@ return (
 <Footer/>
 </div>
 </div>
+<NotificationContainer />
 </div>
 );
 }

@@ -33,8 +33,35 @@ class UsersService extends BaseService
         return $this->db->delete("users", array("id" => $id));
     }
 
+    public function search($request){
+        $data = json_decode($request->getContent());
+        $users = $this->requestUserService();
+        try {
+            return '{"users": ' .print_r($users,true). '}';
+        }
+        catch(PDOException $e) {
+            return '{"error":{"text":'. $e->getMessage() .'}}';
+        }
+    }
+    
+    public function requestUserService(){
+        $arr_results = array();
+        $url = 'https://jsonplaceholder.typicode.com/users';
+        
+        $ch = curl_init($url);
+        
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        
+        $result = curl_exec($ch);
+        curl_close($ch);
+        
+        return $result;
+    }
+    
     public function login($request) {
         $data = json_decode($request->getContent());
+        
         try {
             $db = $this->db;
             $userData ='';
@@ -56,7 +83,7 @@ class UsersService extends BaseService
                 $userData = json_encode($userData);
                 return '{"userData": ' .$userData . '}';
             } else {
-                return '{"error":{"text":"Bad request wrong username and password"}}';
+                return '{"error":{"text":"Bad request wrong username and password.","hash":"'.$password.'"}}';
             }
             
         }

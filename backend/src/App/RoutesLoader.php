@@ -35,7 +35,7 @@ class RoutesLoader
         $api->post('/login', "users.controller:login");
         $api->put('/users/{id}', "users.controller:update");
         $api->delete('/users/{id}', "users.controller:delete");
-        $api->get('/comics', "marvel.controller:getAll");
+        $api->post('/search_users', "users.controller:search");
         
         $this->app->mount($this->app["api.endpoint"].'/'.$this->app["api.version"], $api);
     }

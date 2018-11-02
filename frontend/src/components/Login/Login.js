@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Redirect} from 'react-router-dom';
 import {PostData} from '../../services/PostData';
+import {NotificationManager} from 'react-notifications'
 import './Login.css';
 class Login extends Component {
     constructor(){
@@ -21,8 +22,9 @@ class Login extends Component {
             if(responseJson.userData){
                 sessionStorage.setItem('userData',JSON.stringify(responseJson));
                 this.setState({redirectToReferrer: true});
+            	NotificationManager.success('Welcome '+this.state.username, 'Login successful !');
             }else if(responseJson.error){
-                alert(responseJson.error.text);
+            	NotificationManager.error(responseJson.error.text, 'Error');
             }
         });
         }

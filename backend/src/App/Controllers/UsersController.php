@@ -44,6 +44,10 @@ class UsersController
     {
         return new JsonResponse($this->usersService->delete($id));
     }
+
+    public function search(Request $request){
+        return $this->usersService->search($request);
+    }
     
     public function login(Request $request){
       return $this->usersService->login($request);
