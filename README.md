@@ -1,4 +1,4 @@
-# klaud9 test
+# Cartack test
 
 cd backend  
 composer install  
@@ -16,5 +16,5 @@ npm start
 Front will work on localhost:3000  
   
   
-Username klaud9  
-Password klaud9
+Username cartrack  
+Password cartrack
