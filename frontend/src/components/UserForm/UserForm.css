@@ -9,3 +9,9 @@
 .searchbar{
 	width:50%;
 }
+
+.user_form{
+	border:1px solid grey;
+	margin:5px;
+	padding:5px;
+}
