@@ -8,8 +8,6 @@ php -S localhost:9001 -t web/
   
 cd frontend  
 npm install  
-npm install react-slick  
-npm install slick-carousel  
 npm start  
   
   
